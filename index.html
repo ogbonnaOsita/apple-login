@@ -3,20 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Apple headers -->
-    <meta name="appleid-signin-client-id" content="com.reborn.reborn-app" />
-    <meta name="appleid-signin-scope" content="name email" />
-    <meta name="appleid-signin-redirect-uri" content="www.therebornapp.com" />
-    <!-- <meta name="appleid-signin-state" content="[STATE]" />
-    <meta name="appleid-signin-nonce" content="[NONCE]" /> -->
-    <meta name="appleid-signin-use-popup" content="true" />
-
-    <!-- Content Security Policy -->
-    <!-- <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://appleid.cdn-apple.com; object-src 'none';"
-    /> -->
     <title>Apple Login</title>
   </head>
   <body>
@@ -32,12 +18,13 @@
     ></div>
     <script type="text/javascript">
       AppleID.auth.init({
-        clientId: "com.reborn.reborn-app",
-        scope: "name",
-        redirectURI: "www.therebornapp.com",
-        // state: "[STATE]",
-        // nonce: "[NONCE]",
-        usePopup: true,
+        clientId: "com.reborn.reborn-app2",
+        scope: "name email",
+        redirectURI:
+          "https://backoffice.therebornapp.com/api/v1/reborn/social/apple/callback",
+        responseType: "code",
+        responseMode: "query",
+        usePopup: false,
       });
     </script>
   </body>
